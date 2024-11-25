@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoStudio - Diseño en Movimiento</title>
+    <style>        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #4E3629;
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            gap: 20px;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        header a:hover {
+            color: #F6A750;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .cta-btn {
+            background-color: #F6A750;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        header .cta-btn:hover {
+            background-color: #EDD484;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to right, #4E3629, #F6A750);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .hero .btn {
+            background-color: #F6A750;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #EDD484;
+        }
+
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .services {
+            padding: 80px 20px;
+            background-color: #EDD484;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .services .service {
+            width: 30%;
+            margin: 15px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .services .service h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .services .service p {
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .works {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .works .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .works .gallery .work-item {
+            width: 30%;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+
+        .works .gallery .work-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .works .gallery .work-item:hover img {
+            transform: scale(1.3);
+        }
+
+        .contact {
+            padding: 80px 20px;
+            background-color: #4E3629;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .contact input[type="submit"] {
+            background-color: #F6A750;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
+        .contact input[type="submit"]:hover {
+            background-color: #EDD484;
+        }
+
+        footer {
+            background-color: #4E3629;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        a.scroll-link {
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div><img src="IMG/LOGOAGENCIA.png" width="200px" alt="Peco Studio"></div>
+            <nav>
+                <a href="#about" class="scroll-link">Sobre Nosotros</a>
+                <a href="#services" class="scroll-link">Servicios</a>
+                <a href="#works" class="scroll-link">Trabajos</a>
+                <a href="#contact" class="scroll-link">Contacto</a>
+            </nav>
+            <a href="#contact" class="cta-btn scroll-link">Contáctanos</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <img src="IMG/LOGOAGENCIA2.png" height="auto" width="100%" alt="Logotipo">
+            <p style="margin-top: 50px;">"Bases sólidas para ideas en movimiento"</p>
+            <a href="#services" class="btn scroll-link">Descubre nuestros servicios</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Sobre Nosotros</h2>
+        <p>PecoStudio es una agencia creativa nacida de la pasión por el diseño y la innovación. Nos enfocamos en
+            construir <br> identidades visuales sólidas, explorando nuevas formas de expresión para cada proyecto.
+            Nuestro equipo
+            multidisciplinario trabaja de la mano con cada cliente, enfrentando <br> desafíos creativos y buscando
+            siempre superar las expectativas. En PecoStudio, cada idea tiene el potencial de transformarse en algo
+            único.</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Servicios</h2>
+        <div class="service">
+            <h3>Diseño Gráfico</h3>
+            <p>Desde logotipos hasta campañas visuales, creamos identidades con impacto.</p>
+        </div>
+        <div class="service">
+            <h3>Motion Graphics</h3>
+            <p>Transformamos tus ideas en animaciones dinámicas y atractivas.</p>
+        </div>
+        <div class="service">
+            <h3>Modelado 3D</h3>
+            <p>Creamos modelos tridimensionales para tus proyectos, desde objetos hasta escenarios completos.</p>
+        </div>
+    </section>
+
+    <section id="works" class="works">
+        <h2>Trabajos realizados</h2>
+        <div class="gallery">
+            <div class="work-item">
+                <img src="IMG/MODELADO.jpg" alt="Modelado 3D">
+            </div>
+            <div class="work-item">
+                <img src="IMG/LIBRO.jpg" alt="Libro">
+            </div>
+            <div class="work-item">
+                <img src="IMG/TRIPTICO.jpg" alt="Ilustración">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PecoStudio | Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const sectionOffset = targetElement.offsetTop;
+                const windowHeight = window.innerHeight;
+                const targetPosition = sectionOffset - (windowHeight / 2) + (targetElement.offsetHeight / 2);
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
